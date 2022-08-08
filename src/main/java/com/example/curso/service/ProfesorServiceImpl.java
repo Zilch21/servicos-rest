@@ -74,11 +74,18 @@ public class ProfesorServiceImpl implements IProfesorService {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void save(Profesor profesor) {
         profesorDao.save(profesor);
         
     }
+
+	@Override
+	@Transactional
+	public void deleteAllProfesor() {
+		profesorDao.deleteAll();
+		
+	}
     
     
 }
